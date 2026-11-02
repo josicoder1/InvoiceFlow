@@ -1,0 +1,33 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Uploads / user data
+uploads/
+
+# Java / Spring
+backend/target/
+backend/build/
+backend/.gradle/
+
+# Node / Vite
+node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/coverage/
+*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Freebuff marker
+.freebuff/

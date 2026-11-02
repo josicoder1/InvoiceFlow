@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #060810;
+  color: #f1f5f9;
+  margin: 0;
+  letter-spacing: -0.015em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+}
+
+/* Sharp typographic hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  color: #f8fafc;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Monospace numerals with exact tabular alignment */
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.025em;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+/* Custom sleek dark scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* Sharp Card Surfaces */
+.sharp-card {
+  background: #0c101d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05), 0 4px 20px -2px rgba(0, 0, 0, 0.45);
+  border-radius: 8px;
+}
+
+.sharp-card-hover {
+  background: #0c101d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sharp-card-hover:hover {
+  background: #0f1424;
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 8px 24px -4px rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Razor-sharp Primary Button */
+.sharp-btn-primary {
+  background: linear-gradient(180deg, #5b5ff5 0%, #4338ca 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.28), 0 2px 8px -1px rgba(79, 70, 229, 0.4);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  border-radius: 8px;
+  transition: all 0.15s ease-in-out;
+}
+
+.sharp-btn-primary:hover {
+  background: linear-gradient(180deg, #6569ff 0%, #4a3fd8 100%);
+  border-color: rgba(255, 255, 255, 0.26);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.36), 0 4px 14px 0 rgba(79, 70, 229, 0.5);
+  transform: translateY(-0.5px);
+}
+
+.sharp-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Sharp Secondary Button */
+.sharp-btn-secondary {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #e2e8f0;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border-radius: 8px;
+  transition: all 0.15s ease-in-out;
+}
+
+.sharp-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+/* Sharp Inputs & Selects */
+.sharp-input {
+  background-color: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  color: #f1f5f9;
+  font-size: 0.8125rem;
+  letter-spacing: -0.01em;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sharp-input:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.sharp-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 1px #6366f1, inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Sharp Labels */
+.sharp-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+}
+
+/* Hairline dividers */
+.sharp-divider {
+  border-color: rgba(255, 255, 255, 0.07);
+}

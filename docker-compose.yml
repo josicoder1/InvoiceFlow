@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: invoiceflow-postgres
+    environment:
+      POSTGRES_DB: invoiceflow
+      POSTGRES_USER: invoiceflow
+      POSTGRES_PASSWORD: invoiceflow
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U invoiceflow -d invoiceflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: invoiceflow-mailhog
+    ports:
+      - "8025:8025"   # Web UI to inspect sent emails
+      - "1025:1025"   # SMTP
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8025"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+volumes:
+  postgres_data:
